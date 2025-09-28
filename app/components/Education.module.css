@@ -1,0 +1,315 @@
+/* Education Component Styles */
+.educationContainer {
+  min-height: 80vh;
+  background: linear-gradient(135deg, var(--background-dark-start) 0%, var(--background-dark-middle) 50%, var(--background-dark-end) 100%);
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.educationContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, rgba(64, 224, 208, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(72, 209, 204, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.educationContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section Header */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.sectionHeader.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionTitle {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-teal), var(--primary-teal-light), var(--primary-teal-darker));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: var(--spacing-md);
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
+  border-radius: var(--radius-sm);
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Education Grid */
+.educationGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Education Cards */
+.educationCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: var(--radius-2xl);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 4px solid var(--accent-color, var(--primary-teal));
+  overflow: hidden;
+  position: relative;
+  transition: all var(--transition-slow);
+  opacity: 0;
+  transform: translateY(30px);
+  height: auto;
+  box-shadow: var(--shadow-lg);
+}
+
+.educationCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.educationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(64, 224, 208, 0.3);
+}
+
+/* Card Header */
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-md);
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--accent-color, var(--primary-teal)), rgba(64, 224, 208, 0.6));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(64, 224, 208, 0.3);
+}
+
+.iconWrapper svg {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.yearBadge {
+  background: rgba(64, 224, 208, 0.2);
+  border: 1px solid var(--accent-color, var(--primary-teal));
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-color, var(--primary-teal));
+}
+
+/* Card Body */
+.cardBody {
+  padding: var(--spacing-sm) var(--spacing-xl) var(--spacing-md);
+}
+
+.degreeTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+  line-height: 1.3;
+}
+
+.fieldTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-color, var(--primary-teal));
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.institution {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+
+.gpaDisplay {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.gpaLabel {
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.gpaValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent-color, var(--primary-teal));
+  background: rgba(64, 224, 208, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Coursework Section */
+.courseworkSection {
+  padding: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
+.courseworkHeader {
+  margin-bottom: var(--spacing-md);
+}
+
+.courseworkTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Coursework Grid */
+.courseworkGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.courseChip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(64, 224, 208, 0.3);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-normal);
+}
+
+.courseChip:hover {
+  background: rgba(64, 224, 208, 0.2);
+  border-color: var(--accent-color, var(--primary-teal));
+  transform: translateY(-2px);
+}
+
+/* Animation Delays */
+.educationCard:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.educationCard:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.educationCard:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .educationGrid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .educationContainer {
+    padding: var(--spacing-2xl) var(--spacing-lg);
+  }
+
+  .educationGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .cardHeader {
+    padding: 1.2rem var(--spacing-lg) 0.8rem;
+  }
+
+  .iconWrapper {
+    width: 45px;
+    height: 45px;
+  }
+
+  .iconWrapper svg {
+    font-size: 1.2rem;
+  }
+
+  .cardBody {
+    padding: 0.4rem var(--spacing-lg) 0.8rem;
+  }
+
+  .degreeTitle {
+    font-size: 1.2rem;
+  }
+
+  .fieldTitle {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .educationContainer {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .educationGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .cardHeader {
+    padding: var(--spacing-md) 1.2rem 0.6rem;
+  }
+
+  .cardBody {
+    padding: 0.3rem 1.2rem 0.6rem;
+  }
+
+  .courseChip {
+    font-size: 0.7rem;
+    padding: 0.25rem var(--spacing-sm);
+  }
+
+  .sectionSubtitle {
+    font-size: 1.1rem;
+  }
+}

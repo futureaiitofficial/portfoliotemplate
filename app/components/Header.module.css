@@ -1,0 +1,348 @@
+/* Header Component Styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background: rgba(15, 32, 39, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(64, 224, 208, 0.1);
+  transition: all var(--transition-normal);
+  will-change: transform;
+}
+
+.header.scrolled {
+  background: rgba(15, 32, 39, 0.98);
+  box-shadow: var(--shadow-lg);
+  border-bottom-color: rgba(64, 224, 208, 0.2);
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md) var(--spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  transition: all var(--transition-normal);
+}
+
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.logoIcon {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, var(--primary-teal), var(--primary-teal-light));
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--background-dark-start);
+  transition: all var(--transition-normal);
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoName {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.logoTitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1;
+  margin-top: 0.2rem;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.75rem;
+}
+
+.navItem {
+  position: relative;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-normal);
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--primary-teal);
+  background: rgba(64, 224, 208, 0.08);
+}
+
+.navLink.active {
+  color: var(--primary-teal);
+  background: rgba(64, 224, 208, 0.12);
+}
+
+/* Social Links */
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.socialLink:hover {
+  background: var(--hover-color, rgba(64, 224, 208, 0.2));
+  border-color: var(--hover-color, rgba(64, 224, 208, 0.5));
+  color: var(--text-primary);
+  transform: translateY(-2px) scale(1.05);
+}
+
+.socialLink:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: var(--text-primary);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.7rem;
+  white-space: nowrap;
+  z-index: var(--z-tooltip);
+}
+
+/* Mobile Menu Button */
+.mobileMenuBtn {
+  display: none;
+  background: rgba(64, 224, 208, 0.1);
+  border: 1px solid rgba(64, 224, 208, 0.3);
+  color: var(--primary-teal);
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all var(--transition-normal);
+}
+
+.mobileMenuBtn:hover {
+  background: rgba(64, 224, 208, 0.2);
+  transform: scale(1.05);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(15, 32, 39, 0.98);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(64, 224, 208, 0.1);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal);
+}
+
+.mobileNav.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: var(--spacing-md);
+}
+
+.mobileNavItem {
+  margin-bottom: var(--spacing-sm);
+}
+
+.mobileNavLink {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  width: 100%;
+  text-align: left;
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--primary-teal);
+  background: rgba(64, 224, 208, 0.1);
+}
+
+/* Mobile Social Links */
+.mobileSocial {
+  padding: var(--spacing-md);
+  border-top: 1px solid rgba(64, 224, 208, 0.1);
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.mobileSocialLink {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all var(--transition-normal);
+  font-size: 0.9rem;
+}
+
+.mobileSocialLink:hover {
+  background: var(--hover-color, rgba(64, 224, 208, 0.2));
+  border-color: var(--hover-color, rgba(64, 224, 208, 0.5));
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .navList {
+    gap: 0.5rem;
+  }
+
+  .navLink {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .socialLinks {
+    gap: var(--spacing-xs);
+  }
+
+  .socialLink {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerContent {
+    padding: var(--spacing-md);
+  }
+
+  .desktopNav {
+    display: none;
+  }
+
+  .socialLinks {
+    display: none;
+  }
+
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .brandName {
+    font-size: 1.3rem;
+  }
+
+  .brandTitle {
+    font-size: 0.7rem;
+  }
+
+  .logoIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+
+  .logoName {
+    font-size: 1.2rem;
+  }
+
+  .logoTitle {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    display: none;
+  }
+
+  .logoIcon {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .navList {
+    gap: 0.3rem;
+  }
+
+  .navLink {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,527 @@
+/* About Component Styles */
+.aboutContainer {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--background-dark-start) 0%, var(--background-dark-middle) 50%, var(--background-dark-end) 100%);
+  padding: var(--spacing-3xl) 0;
+  transition: opacity var(--transition-normal);
+}
+
+.aboutContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+}
+
+/* Hero Section */
+.heroIntro {
+  margin-bottom: var(--spacing-3xl);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--transition-slow);
+}
+
+.heroIntro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heroColumns {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  min-height: 60vh;
+  max-width: 100%;
+}
+
+.heroLeft {
+  padding-right: var(--spacing-md);
+  min-width: 0;
+}
+
+.heroRight {
+  position: relative;
+  height: 100%;
+  min-height: 450px;
+  max-height: 500px;
+  overflow: hidden;
+}
+
+.mainTitle {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+}
+
+.introContent {
+  max-width: 600px;
+}
+
+.mainDescription {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-lg);
+}
+
+.secondaryDescription {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* VS Code Interface */
+.codingInterface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vscodeWindow {
+  background: #1e1e1e;
+  border-radius: var(--radius-md);
+  border: 1px solid #323233;
+  box-shadow: var(--shadow-xl);
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  max-height: 450px;
+  overflow: hidden;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  animation: windowAppear 1s ease-out;
+  margin: 0 auto;
+}
+
+.windowHeader {
+  background: #2d2d30;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-md);
+  border-bottom: 1px solid #323233;
+}
+
+.windowControls {
+  display: flex;
+  gap: 8px;
+  margin-right: var(--spacing-md);
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+}
+
+.control.close { background: #ff5f57; }
+.control.minimize { background: #ffbd2e; }
+.control.maximize { background: #28ca42; }
+
+.windowTitle {
+  color: #cccccc;
+  font-size: 0.7rem;
+  font-weight: 400;
+}
+
+.codeEditor {
+  display: flex;
+  height: 65%;
+  background: #1e1e1e;
+  min-height: 200px;
+}
+
+.codeEditor.fullHeight {
+  height: calc(100% - 35px);
+  min-height: 350px;
+}
+
+.lineNumbers {
+  background: #1e1e1e;
+  color: #858585;
+  padding: var(--spacing-sm) 0.3rem;
+  text-align: right;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  border-right: 1px solid #323233;
+  user-select: none;
+  min-width: 40px;
+}
+
+.lineNumber {
+  padding: 0 0.3rem;
+  height: 1.3rem;
+}
+
+.codeContent {
+  flex: 1;
+  padding: var(--spacing-sm);
+  font-size: 0.7rem;
+  line-height: 1.3;
+  overflow: hidden;
+}
+
+.codeContent > .codeLine {
+  color: #d4d4d4;
+}
+
+.codeLine {
+  height: 1.3rem;
+  white-space: nowrap;
+}
+
+/* Code syntax highlighting */
+.codeContent :global(.keyword) { color: #c586c0 !important; font-weight: 500; }
+.codeContent :global(.module) { color: #4fc1ff !important; }
+.codeContent :global(.function) { color: #dcdcaa !important; }
+.codeContent :global(.variable) { color: #9cdcfe !important; }
+.codeContent :global(.string) { color: #ce9178 !important; }
+.codeContent :global(.comment) { color: #6a9955 !important; font-style: italic; }
+.codeContent :global(.number) { color: #b5cea8 !important; }
+.codeContent :global(.parameter) { color: #9cdcfe !important; }
+.codeContent :global(.operator) { color: #d4d4d4 !important; }
+.codeContent :global(.bracket) { color: #ffd700 !important; }
+.codeContent :global(.jsx-tag) { color: #569cd6 !important; }
+.codeContent :global(.jsx-attribute) { color: #92c5f8 !important; }
+.codeContent :global(.jsx-string) { color: #ce9178 !important; }
+
+/* Skills Section */
+.skillsSection {
+  margin-bottom: var(--spacing-3xl);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 300;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.skillCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(64, 224, 208, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all var(--transition-slow);
+}
+
+.skillCard.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skillCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(64, 224, 208, 0.3);
+  box-shadow: var(--shadow-lg);
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.skillNumber {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: rgba(64, 224, 208, 0.8);
+  background: rgba(64, 224, 208, 0.1);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  min-width: 60px;
+  text-align: center;
+}
+
+.skillTitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.skillDescription {
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-lg);
+}
+
+.techShowcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+}
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: rgba(64, 224, 208, 0.05);
+  padding: var(--spacing-sm) 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(64, 224, 208, 0.1);
+  transition: all var(--transition-fast);
+}
+
+.techItem:hover {
+  background: rgba(64, 224, 208, 0.1);
+  border-color: rgba(64, 224, 208, 0.3);
+}
+
+.techIcon {
+  font-size: 1rem;
+  color: var(--primary-teal);
+}
+
+.techName {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.additionalTech {
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(64, 224, 208, 0.1);
+}
+
+.additionalTechList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.additionalTechItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(64, 224, 208, 0.03);
+  color: var(--text-light);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  border: 1px solid rgba(64, 224, 208, 0.05);
+}
+
+.additionalTechItem .techIcon {
+  font-size: 0.9rem;
+  color: rgba(64, 224, 208, 0.7);
+}
+
+.skillsFooter {
+  margin-top: var(--spacing-2xl);
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(64, 224, 208, 0.1);
+}
+
+.skillsNote {
+  color: var(--text-light);
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Stats Section */
+.statsSection {
+  text-align: center;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.statItem {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(64, 224, 208, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl) var(--spacing-md);
+  transition: all var(--transition-normal);
+}
+
+.statItem:hover {
+  border-color: rgba(64, 224, 208, 0.3);
+  transform: translateY(-2px);
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--primary-teal);
+  margin-bottom: var(--spacing-sm);
+}
+
+.statLabel {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Animations */
+@keyframes windowAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animation Delays */
+.skillCard:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.skillCard:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.skillCard:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroColumns {
+    gap: var(--spacing-xl);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .heroLeft {
+    padding-right: var(--spacing-sm);
+  }
+
+  .heroRight {
+    min-height: 350px;
+    max-height: 400px;
+  }
+
+  .vscodeWindow {
+    max-width: 450px;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    padding: var(--spacing-3xl) 0;
+  }
+
+  .aboutContent {
+    padding: 0 var(--spacing-md);
+  }
+
+  .heroColumns {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-2xl);
+    text-align: center;
+  }
+
+  .heroLeft {
+    padding-right: 0;
+  }
+
+  .heroRight {
+    min-height: 300px;
+    order: -1;
+  }
+
+  .vscodeWindow {
+    max-width: 100%;
+    max-height: 300px;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCard {
+    padding: var(--spacing-lg);
+  }
+
+  .techShowcase {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroIntro {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .heroRight {
+    min-height: 250px;
+  }
+
+  .vscodeWindow {
+    max-width: 100%;
+    max-height: 250px;
+  }
+
+  .windowTitle {
+    font-size: 0.7rem;
+  }
+
+  .codeContent {
+    font-size: 0.7rem;
+    padding: var(--spacing-sm);
+  }
+
+  .lineNumbers {
+    padding: var(--spacing-sm) 0.3rem;
+    font-size: 0.7rem;
+  }
+
+  .mainDescription {
+    font-size: 1.1rem;
+  }
+
+  .skillHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+
+  .techShowcase {
+    grid-template-columns: 1fr 1fr;
+  }
+}

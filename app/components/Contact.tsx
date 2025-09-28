@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaDownload, FaPaperPlane, FaUser, FaBuilding, FaClock } from 'react-icons/fa'
+import styles from './Contact.module.css'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -49,60 +50,46 @@ export default function Contact() {
     {
       icon: <FaEnvelope />,
       label: 'Email',
-      value: 'lahari@example.com',
-      href: 'mailto:lahari@example.com',
+      value: 'laharisandepudi9@gmail.com',
+      href: 'mailto:laharisandepudi9@gmail.com',
       color: '#ea4335'
-    },
-    {
-      icon: <FaPhone />,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
-      color: '#34a853'
     },
     {
       icon: <FaMapMarkerAlt />,
       label: 'Location',
-      value: 'San Francisco, CA',
-      href: 'https://maps.google.com/?q=San+Francisco,CA',
+      value: 'Los Angeles, CA',
+      href: 'https://maps.google.com/?q=Los Angeles,CA',
       color: '#4285f4'
     },
     {
       icon: <FaLinkedin />,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/lahari',
-      href: 'https://linkedin.com/in/lahari',
+      value: 'linkedin.com/in/lahari-sandepudi',
+      href: 'https://linkedin.com/in/lahari-sandepudi',
       color: '#0077b5'
     }
   ]
 
   const quickActions = [
     {
-      icon: <FaDownload />,
-      label: 'Download Resume',
-      description: 'Get my latest resume',
-      href: '/resume.pdf',
-      color: '#ff6b6b'
-    },
-    {
       icon: <FaGithub />,
       label: 'View Projects',
       description: 'Check out my GitHub',
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/lahari-sandepudi',
       color: '#333'
     },
     {
       icon: <FaLinkedin />,
       label: 'Connect on LinkedIn',
       description: 'Let\'s connect professionally',
-      href: 'https://linkedin.com/in/lahari',
+      href: 'https://linkedin.com/in/lahari-sandepudi',
       color: '#0077b5'
     }
   ]
 
   return (
-    <section className="contact-section">
-      <div className="contact-container">
+    <section className={styles.contactSection}>
+      <div className={styles.contactContainer}>
         {/* Section Header */}
         <div className="section-header">
           <h2 className="section-title">Let's Work Together</h2>
