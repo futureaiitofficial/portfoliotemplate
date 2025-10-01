@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useLayoutEffect } from 'react'
-import { FaBars, FaTimes, FaCode, FaDatabase, FaRocket, FaGithub, FaLinkedin, FaGraduationCap, FaPhone } from 'react-icons/fa'
+import { FaBars, FaTimes, FaCode, FaDatabase, FaRocket, FaGithub, FaLinkedin, FaGraduationCap, FaPhone, FaFileAlt } from 'react-icons/fa'
 import styles from './Header.module.css'
 
 export default function Header() {
@@ -24,7 +24,7 @@ export default function Header() {
       setIsScrolled(scrolled)
 
       // Update active section based on scroll position
-      const sections = ['hero', 'about', 'experience', 'education', 'contact']
+      const sections = ['hero', 'about', 'experience', 'education', 'projects', 'publications', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -63,9 +63,10 @@ export default function Header() {
   const navItems = [
     { id: 'hero', label: 'Home', icon: <FaRocket /> },
     { id: 'about', label: 'About', icon: <FaCode /> },
-    { id: 'experience', label: 'Experience', icon: <FaDatabase /> },
+    { id: 'experience', label: 'Work', icon: <FaDatabase /> },
     { id: 'education', label: 'Education', icon: <FaGraduationCap /> },
     { id: 'projects', label: 'Projects', icon: <FaCode /> },
+    { id: 'publications', label: 'Research', icon: <FaFileAlt /> },
     { id: 'contact', label: 'Contact', icon: <FaPhone /> }
   ]
 
@@ -146,7 +147,8 @@ export default function Header() {
                 className={`${styles.mobileNavLink} ${isHydrated && activeSection === item.id ? styles.active : ''}`}
                 onClick={() => scrollToSection(item.id)}
               >
-                {item.label}
+                {item.icon}
+                <span>{item.id === 'experience' ? 'Experience' : item.id === 'publications' ? 'Publications' : item.label}</span>
               </button>
             </li>
             ))}

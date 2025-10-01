@@ -343,16 +343,16 @@ const projectsData: { [key: string]: any } = {
     },
     screenshots: [
       {
-        title: 'Model Performance Dashboard',
+        title: 'Model Performance',
         description: 'Comprehensive comparison of model performance showing PR-AUC, ROC-AUC, confusion matrices, and precision-recall curves for all tested algorithms.',
         label: 'Performance',
-        image: '/screenshots/fraud-performance.jpg'
+        image: '/screenshots/frauddetectionmodels.png'
       },
       {
         title: 'Feature Engineering Pipeline',
         description: 'Advanced feature engineering interface showing the transformation from 31 original features to 89 engineered features with statistical analysis.',
         label: 'Features',
-        image: '/screenshots/fraud-features.jpg'
+        image: '/screenshots/fraudfeatureengineering.png'
       },
       {
         title: 'Real-time API Interface',
@@ -364,7 +364,7 @@ const projectsData: { [key: string]: any } = {
         title: 'Monitoring Dashboard',
         description: 'Grafana monitoring dashboard displaying real-time metrics, prediction accuracy, API performance, and fraud detection statistics.',
         label: 'Monitoring',
-        image: '/screenshots/fraud-monitoring.jpg'
+        image: '/screenshots/grafanamonitoringdashboard.png'
       }
     ]
   },
@@ -546,6 +546,70 @@ const projectsData: { [key: string]: any } = {
         'TF-IDF vectorization proved most effective for textual feature extraction'
       ]
     }
+  },
+  'rag-research-assistant': {
+    id: 'rag-research-assistant',
+    title: 'RAG Based Research Assistant',
+    category: 'Artificial Intelligence',
+    description: 'Automated literature survey tool using Retrieval-Augmented Generation to fetch academic papers, generate structured reports, calculate novelty scores, and export results. Reduces research timeline from weeks to minutes.',
+    image: '/projects/rag-research.png',
+    technologies: ['Python', 'LangChain', 'FAISS', 'OpenAI GPT-4', 'Streamlit', 'ReportLab', 'python-docx', 'arXiv API'],
+    github: 'https://github.com/lahari17/RagBasedResearchAssistant',
+    demo: 'https://researchassistantai.streamlit.app',
+    duration: '2.5 months',
+    team: 'Solo Project',
+    status: 'completed',
+    overview: 'Developed an intelligent research assistant that automates the literature survey process using Retrieval-Augmented Generation (RAG). The tool transforms weeks of manual research into minutes of automated analysis, providing researchers with structured survey reports, novelty assessments, and professional export capabilities.',
+    problem: 'Conducting literature surveys is extremely time-consuming, requiring researchers and students to spend weeks manually searching databases, extracting insights, and identifying research gaps. Key challenges include searching across multiple databases, identifying themes and background information, estimating topic novelty, and formatting results into professional reports.',
+    solution: 'Built a comprehensive RAG pipeline that automates the entire literature survey workflow: retrieval of relevant papers from APIs (arXiv, Semantic Scholar), GPT-4 powered summarization into structured sections (Background, Themes, Gaps, Citations), heuristic-based novelty scoring, and one-click export to PDF/Word formats.',
+    challenges: [
+      'Limited coverage from single API sources requiring modular multi-API retrieval architecture',
+      'Subjective novelty score calculation solved with heuristic combining volume, diversity, and recency metrics',
+      'Generating clean, professional report formatting using ReportLab and python-docx libraries',
+      'Optimizing vector search performance with FAISS for large academic paper datasets',
+      'Ensuring citation accuracy and proper academic formatting in generated reports',
+      'Balancing retrieval quality vs speed for real-time user experience in Streamlit interface'
+    ],
+    features: [
+      'Intelligent Paper Retrieval: FAISS embeddings with LangChain retriever for semantic search',
+      'Automated Literature Survey: GPT-4 generated structured reports with proper citations',
+      'Novelty Score Calculation: Heuristic analysis based on paper volume, diversity, and recency',
+      'Multi-format Export: One-click PDF and Word document generation with professional formatting',
+      'Intuitive Streamlit Interface: User-friendly UI for input, results visualization, and downloads',
+      'Multi-API Integration: Supports arXiv, Semantic Scholar, and extensible for additional databases',
+      'Vector Database Optimization: FAISS implementation for fast semantic similarity search',
+      'Citation Management: Automatic citation formatting and bibliography generation',
+      'Real-time Processing: Live progress indicators and streaming results display',
+      'Customizable Report Sections: Configurable survey structure and content organization'
+    ],
+    techDetails: {
+      'RAG Architecture': 'Implemented end-to-end Retrieval-Augmented Generation pipeline using LangChain orchestration. Papers converted to embeddings using OpenAI/HuggingFace models, stored in FAISS vector database for efficient semantic search and retrieval.',
+      'AI Integration': 'GPT-4 integration for intelligent summarization and structured report generation. Custom prompts designed for academic writing standards, ensuring proper citation formatting and coherent survey structure across Background, Themes, and Research Gaps sections.',
+      'Vector Search': 'FAISS vector database implementation for high-performance similarity search across large academic paper collections. Optimized embedding generation and indexing for sub-second query response times.',
+      'Multi-API Retrieval': 'Modular retrieval layer supporting multiple academic databases including arXiv and Semantic Scholar APIs. Designed for easy extension to additional paper sources with unified data processing pipeline.',
+      'Report Generation': 'Professional document export using ReportLab for PDF generation and python-docx for Word documents. Custom templates ensure academic formatting standards with proper citations, headers, and structured layouts.',
+      'Novelty Assessment': 'Sophisticated heuristic algorithm calculating topic novelty based on retrieved paper volume, research diversity metrics, publication recency, and citation patterns. Provides quantitative assessment of research gap opportunities.'
+    },
+    screenshots: [
+      {
+        title: 'Research Query Interface',
+        description: 'Clean Streamlit homepage with topic input field, search parameters, and API source selection for initiating literature surveys.',
+        label: 'Homepage',
+        image: '/screenshots/rag-homepage.jpeg'
+      },
+      {
+        title: 'Generated Survey Report',
+        description: 'AI-generated structured literature survey with Background, Themes, Research Gaps sections, and properly formatted academic citations.',
+        label: 'Survey Report',
+        image: '/screenshots/rag-papers.jpeg'
+      },
+      {
+        title: 'Export & Download Options',
+        description: 'Professional export interface with PDF and Word format options, custom formatting settings, and one-click download functionality.',
+        label: 'Export Options',
+        image: '/screenshots/rag-export.jpeg'
+      }
+    ]
   }
   // Add more projects as needed
 }

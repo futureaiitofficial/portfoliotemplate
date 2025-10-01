@@ -4,6 +4,7 @@ import About from './components/About'
 import Experience from './components/Experience'
 import Education from './components/Education'
 import Projects from './components/Projects'
+import Publications from './components/Publications'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -26,6 +27,9 @@ export default function Home() {
         </section>
         <section id="projects">
           <Projects />
+        </section>
+        <section id="publications">
+          <Publications />
         </section>
         <section id="contact">
           <Contact />

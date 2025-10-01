@@ -133,6 +133,27 @@ const projects = [
     status: 'completed',
     duration: '2 months',
     team: 'Solo Project'
+  },
+  {
+    id: 'rag-research-assistant',
+    title: 'RAG Based Research Assistant',
+    category: 'ai',
+    description: 'Automated literature survey tool using RAG to fetch papers, generate structured reports, calculate novelty scores, and export to PDF/Word. Reduces research timeline from weeks to minutes.',
+    image: '/projects/rag-research-assistant.jpg',
+    technologies: ['Python', 'LangChain', 'FAISS', 'OpenAI GPT-4', 'Streamlit', 'ReportLab'],
+    techIcons: [
+      <SiPython key="python" />,        // Python
+      <FaBrain key="langchain" />,      // LangChain (AI)
+      <FaDatabase key="faiss" />,       // FAISS (Vector DB)
+      <FaBrain key="gpt4" />,           // GPT-4
+      <SiPandas key="streamlit" />      // Streamlit (using pandas icon as placeholder)
+    ],
+    github: 'https://github.com/yourusername/rag-research-assistant',
+    demo: 'https://rag-research-assistant.streamlit.app',
+    featured: true,
+    status: 'completed',
+    duration: '2.5 months',
+    team: 'Solo Project'
   }
 ]
 
